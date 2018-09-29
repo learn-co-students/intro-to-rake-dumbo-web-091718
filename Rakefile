@@ -9,7 +9,7 @@ namespace :greeting do
   task :hola do
     puts  "hola de Rake!"
   end
-end 
+end
 
 
 namespace :db do
@@ -34,9 +34,9 @@ namespace :db do
 end
 
 
-# namespace :rake console do
-  desc 'drop into the Pry console'
+namespace :db do
+  desc 'dropping into the Pry console'
   task :console => :environment do
        Pry.start
   end
-end
+end 

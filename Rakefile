@@ -9,7 +9,7 @@ namespace :greeting do
   task :hola do
     puts  "hola de Rake!"
   end
-end
+
 
 
 namespace :db do
@@ -26,6 +26,19 @@ namespace :db do
   end
 end
 
-task :environment do
+namespace :db do
+  desc 'giving the task access to this file.'
+  task :environment do
   require_relative './config/environment'
+  end
+end
+
+
+# namespace :rake console do
+  desc 'drop into the Pry console'
+  task :console => :environment do
+       Pry.start
+  end
+
+
 end
